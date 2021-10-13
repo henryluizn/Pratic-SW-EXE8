@@ -78,7 +78,7 @@ int main(){
 		std::cout << "\nAdicionando aluno 3 na discplina " << d2.getNome() << std::endl;
 		if (d2.adicionarAluno(&p3))
 		{
-			std::cout << "Aluno(a) " << p2.getNome() << " adicionado com sucesso!" << std::endl;		
+			std::cout << "Aluno(a) " << p3.getNome() << " adicionado com sucesso!" << std::endl;		
 		}else{
 			std::cout << "Falha ao adicionar o aluno(a)" << std::endl;		
 		}
@@ -90,15 +90,12 @@ int main(){
 		getline(std::cin, buffer_pessoa);
 		p2.setNome(buffer_pessoa);
 
-		std::cout << "\nImpressao do vetor de alunos APOS atualizacao do nome do 2 aluno: " << std::endl;
-		d1.printVetorAlunos();
-
 		c1.adicionarDisciplina(&d2);
 
 		std::cout << "\nImprimindo disciplinas do curso " << c1.getNomeCurso() << std::endl;
 		c1.printListaDisciplina();
 
-		std::cout << "\nRemovendo Disciplina " << d2.getNome() << " \nDigite o nome da disciplina para confirmar a exclusão: ";
+		std::cout << "\nRemovendo Disciplina " << " \nDigite o nome da disciplina para a exclusao: ";
 		getline(std::cin, buffer_string);
 		c1.removerDisciplina(buffer_string);
 
