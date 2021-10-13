@@ -70,7 +70,7 @@ bool Disciplina::adicionarAluno(Pessoa* aluno)
 }
 
 
-std::list<Pessoa*> Disciplina::getVetorAlunos()
+std::list<Pessoa*> Disciplina::getAlunos()
 {
 	return this->alunos;
 }

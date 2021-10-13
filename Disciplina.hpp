@@ -26,7 +26,7 @@ class Disciplina{
 		bool removerAluno(Pessoa* aluno);
 		bool removerAluno(long long cpf);
 		int getQtdAlunos();
-		std::list<Pessoa*> getVetorAlunos();
+		std::list<Pessoa*> getAlunos();
 		void printVetorAlunos();
 
 	// ------------------------------------------	
