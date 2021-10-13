@@ -34,29 +34,27 @@ int main(){
 		getline(std::cin, buffer_pessoa);
 		Pessoa prof{buffer_pessoa};
 		
-		std::cout << "Nova pessoa cadastrada: " << prof.getNome() << std::endl;
-
 		std::cout << "\nCriando as pessoas para vincular como alunos(as)" << std::endl;
 		std::cout << "\nCriando uma nova pessoa\n\tNome pessoa 1: " ;		
 		getline(std::cin, buffer_pessoa);
 		Pessoa p1{buffer_pessoa};
 		
-		std::cout << "Nova pessoa cadastrada: " << p1.getNome() << std::endl;
-
-		
+	
 		std::cout << "\nCriando uma nova pessoa\n\tNome pessoa 2: " ;		
 		getline(std::cin, buffer_pessoa);
 		Pessoa p2{buffer_pessoa};	
 
-		std::cout << "Nova pessoa cadastrada: " << p2.getNome() << std::endl;
-
+		
+		std::cout << "\nCriando uma nova pessoa\n\tNome pessoa 3: " ;		
+		getline(std::cin, buffer_pessoa);
+		Pessoa p3{buffer_pessoa};
 		
 		Disciplina d1{"Orientacao a Objetos", prof};
 		d1.setProfessor(prof);
 		c1.setDisciplina(&d1);
 		std::cout << "\nAtribuindo o professor " << d1.getNomeProfessor() << " para a disciplina " << d1.getNome() << std::endl;
 		
-		std::cout << "\nAdicionando alunos(as) na disciplina" << std::endl;
+		std::cout << "\nAdicionando alunos(as) na disciplina " << d1.getNome() << std::endl;
 
 		
 		if (d1.adicionarAluno(&p1))
@@ -73,8 +71,19 @@ int main(){
 			std::cout << "Falha ao adicionar o aluno(a)" << std::endl;		
 		}
 		
+		std::cout << "\nAdicionando nova disciplina: " << std::endl;
+		getline(std::cin, buffer_string);
+		Disciplina d2{buffer_string, prof};
+
+		std::cout << "\nAdicionando aluno 3 na discplina " << d2.getNome() << std::endl;
+		if (d2.adicionarAluno(&p3))
+		{
+			std::cout << "Aluno(a) " << p2.getNome() << " adicionado com sucesso!" << std::endl;		
+		}else{
+			std::cout << "Falha ao adicionar o aluno(a)" << std::endl;		
+		}
 		
-		std::cout << "\nImpressao do vetor de alunos ANTES da atualizacao do nome do 2 aluno: " << std::endl;
+		std::cout << "\nImpressao do vetor de alunos da disciplina " << d1.getNome() << " ANTES da atualizacao do nome do 2 aluno: " << std::endl;
 		d1.printVetorAlunos();
 
 		std::cout << "\n\tInsira um novo nome para o aluno 2: " ;
@@ -84,16 +93,15 @@ int main(){
 		std::cout << "\nImpressao do vetor de alunos APOS atualizacao do nome do 2 aluno: " << std::endl;
 		d1.printVetorAlunos();
 
-		// std::cout << "\nO curso " << d1.getCursoDisciplina().getNomeCurso() << " possui o" << 
-		// d1.getCursoDisciplina().getCoordenadorCurso().getNome() << " como coordenador de curso." << std::endl;
+		c1.setDisciplina(&d2);
 
-		std::cout << "\nA disciplina " << d1.getNome() << " ministrada pelo professor " << d1.getNomeProfessor() <<
-		" possui um total de " << d1.getQtdAlunos() << " alunos vinculados." << std::endl;
+		std::cout << "\nImprimindo disciplinas do curso " << c1.getNomeCurso() << std::endl;
+		c1.printListaDisciplina();
 
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << "\nErro: " << e.what() << '\n';
+		std::cout << "\nError: " << e.what() << '\n' << std::endl;
 	}
 	
 	return 0;
