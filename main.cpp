@@ -107,5 +107,4 @@ int main(){
 	{
 		std::cout << "\nError: " << e.what() << '\n' << std::endl;
 	}
-	
 }
