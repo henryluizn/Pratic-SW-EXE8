@@ -23,7 +23,7 @@ Pessoa& Curso::getCoordenadorCurso()
 }
 
 
-void Curso::setDisciplina(Disciplina* disciplina)
+void Curso::adicionarDisciplina(Disciplina* disciplina)
 {
     try
     {

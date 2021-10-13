@@ -22,7 +22,7 @@ class Disciplina{
 		
 	// -------- novas implementacoes ------------
 		std::string getNomeProfessor();
-		bool adicionarAluno(Pessoa* alunos);
+		bool adicionarAluno(Pessoa* aluno);
 		bool removerAluno(Pessoa* aluno);
 		bool removerAluno(long long cpf);
 		int getQtdAlunos();

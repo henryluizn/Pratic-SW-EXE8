@@ -51,7 +51,7 @@ int main(){
 		
 		Disciplina d1{"Orientacao a Objetos", prof};
 		d1.setProfessor(prof);
-		c1.setDisciplina(&d1);
+		c1.adicionarDisciplina(&d1);
 		std::cout << "\nAtribuindo o professor " << d1.getNomeProfessor() << " para a disciplina " << d1.getNome() << std::endl;
 		
 		std::cout << "\nAdicionando alunos(as) na disciplina " << d1.getNome() << std::endl;
@@ -93,7 +93,7 @@ int main(){
 		std::cout << "\nImpressao do vetor de alunos APOS atualizacao do nome do 2 aluno: " << std::endl;
 		d1.printVetorAlunos();
 
-		c1.setDisciplina(&d2);
+		c1.adicionarDisciplina(&d2);
 
 		std::cout << "\nImprimindo disciplinas do curso " << c1.getNomeCurso() << std::endl;
 		c1.printListaDisciplina();

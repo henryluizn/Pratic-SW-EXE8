@@ -13,7 +13,7 @@ class Curso
         std::string getNomeCurso();
         Pessoa& getCoordenadorCurso();
 
-        void setDisciplina(Disciplina* disciplina);
+        void adicionarDisciplina(Disciplina* disciplina);
         bool removerDisciplina(Disciplina* disciplina);
         bool removerDisciplina(std::string nome);
         std::list<Disciplina*> getListaDisciplina();
