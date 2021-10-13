@@ -101,19 +101,14 @@ void Curso::printListaDisciplina()
 {
     try
     {
-        int i{1};
         std::list<Disciplina*>::iterator it{this->disciplinas.begin()};
         std::cout << "\nImprimindo disciplinas:" << std::endl;
-        
         while(it != this->disciplinas.end())
         {
-            std::cout << "teste do looping-1 "<< i << std::endl;
-            std::cout << "\tDisciplina: " << (*it)->getNome() << std::endl;
+            std::cout << "\tDisciplina: " << (*it)->getNome() << std::endl;    
             std::cout << "\tAlunos: " << std::endl;
             (*it)->printVetorAlunos();
             it++;
-            std::cout << "teste do looping-2 "<< i << std::endl;
-            i++;
         }
     }
     catch(const std::exception& e)

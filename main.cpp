@@ -100,16 +100,15 @@ int main(){
 
 		std::cout << "\nRemovendo Disciplina " << d2.getNome() << " \nDigite o nome da disciplina para confirmar a exclusão: ";
 		getline(std::cin, buffer_string);
-		c1.removerDisciplina(buffer_string);
+		c1.removerDisciplina(&d2);
 
-		std::cout << "\nImprimindo disciplinas do curso APOS remocao" << c1.getNomeCurso() << std::endl;
+		std::cout << "\nImprimindo disciplinas do curso " << c1.getNomeCurso() << " APOS remocao" << std::endl;
 		c1.printListaDisciplina();
-
+		exit(0);
 	}
 	catch(const std::exception& e)
 	{
 		std::cout << "\nError: " << e.what() << '\n' << std::endl;
 	}
 	
-	return 0;
 }
