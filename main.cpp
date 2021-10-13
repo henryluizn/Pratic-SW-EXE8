@@ -100,7 +100,7 @@ int main(){
 
 		std::cout << "\nRemovendo Disciplina " << d2.getNome() << " \nDigite o nome da disciplina para confirmar a exclusão: ";
 		getline(std::cin, buffer_string);
-		c1.removerDisciplina(&d2);
+		c1.removerDisciplina(buffer_string);
 
 		std::cout << "\nImprimindo disciplinas do curso " << c1.getNomeCurso() << " APOS remocao" << std::endl;
 		c1.printListaDisciplina();
