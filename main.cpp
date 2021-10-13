@@ -98,6 +98,13 @@ int main(){
 		std::cout << "\nImprimindo disciplinas do curso " << c1.getNomeCurso() << std::endl;
 		c1.printListaDisciplina();
 
+		std::cout << "\nRemovendo Disciplina " << d2.getNome() << " \nDigite o nome da disciplina para confirmar a exclusão: ";
+		getline(std::cin, buffer_string);
+		c1.removerDisciplina(buffer_string);
+
+		std::cout << "\nImprimindo disciplinas do curso APOS remocao" << c1.getNomeCurso() << std::endl;
+		c1.printListaDisciplina();
+
 	}
 	catch(const std::exception& e)
 	{
